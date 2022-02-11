@@ -17,10 +17,10 @@ import {
 function Header() {
     return(
         <div>
-            <h1>Header</h1>
+            <h1 className="text-6xl">Header</h1>
 
             {/* Left */}
-            <div>
+            <div className="flex items-center">
                 <Image 
                     src="https://links.papareact.com/5me"
                     width={40}
@@ -29,8 +29,13 @@ function Header() {
                     alt="Facebook" 
                 />
 
-                <div>
-                    <input type="text" placeholder="Search Facebooks" />
+                <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
+                    <SearchIcon className="h-6 text-gray-600" />
+                    <input 
+                        className="flex ml-2 items-center bg-transparent outline-none placeholder-gray-500"
+                        type="text"
+                        placeholder="Search Facebook"
+                    />
                 </div>
             </div>
             {/* Center */}
