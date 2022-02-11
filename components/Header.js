@@ -4,20 +4,21 @@ import {
     ChatIcon,
     ChevronDownIcon,
     HomeIcon,
+    UserGroupIcon,
     UserGuideicon,
     ViewGirdIcon,
 } from '@heroicons/react/solid';
 import {
     FlagIcon,
-    playIcon,
+    PlayIcon,
     SearchIcon,
     ShoppingCartIcon,
-} from '@heroicons/react/solid';
+} from '@heroicons/react/outline';
+import HeaderIcon from '../components/HeaderIcon';
 
 function Header() {
     return(
-        <div>
-            <h1 className="text-6xl">Header</h1>
+        <div className="sticky top-0 z-50 bg-whtie flex items-center p-2 lg:px-5 shadow-md">
 
             {/* Left */}
             <div className="flex items-center">
@@ -32,15 +33,29 @@ function Header() {
                 <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
                     <SearchIcon className="h-6 text-gray-600" />
                     <input 
-                        className="flex ml-2 items-center bg-transparent outline-none placeholder-gray-500"
+                        className="flex ml-2 items-center bg-transparent outline-none placeholder-gray-500 flex-shrink"
                         type="text"
                         placeholder="Search Facebook"
                     />
                 </div>
             </div>
             {/* Center */}
+            <div className="flex justify-center flex-grow">
+                <div className="flex space-x-6 md:space-x-2">
+                    <HeaderIcon active Icon={HomeIcon} />
+                    <HeaderIcon Icon={FlagIcon} />
+                    <HeaderIcon Icon={PlayIcon} />
+                    <HeaderIcon Icon={ShoppingCartIcon} />
+                    <HeaderIcon Icon={UserGroupIcon} />
+                </div>
+            </div>
 
             {/* Right */}
+            <div>
+                {/* Profile pic */}
+
+
+            </div>
         </div>
     )
 }
