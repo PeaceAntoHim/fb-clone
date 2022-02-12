@@ -16,6 +16,7 @@ function StoryCard({ name, src, profile }) {
                 src={src}
                 layout="fill"
             />
+            <p className="absolute opacity-0 lg:opcatity-100 bottom-4 w-5/6 text-white text-sm font-bold truncate">{name}</p>
         </div>
     );
 }
