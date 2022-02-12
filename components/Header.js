@@ -41,6 +41,7 @@ function Header() {
                     />
                 </div>
             </div>
+            
             {/* Center */}
             <div className="flex justify-center flex-grow">
                 <div className="flex space-x-6 md:space-x-2">
