@@ -15,14 +15,15 @@ function InputBox() {
 
         if (!inputRef.current.value) return;
 
-        db.collection('posts').add({
+        db.collection("posts").add({
             message: inputRef.current.value,
-            name: session.user.email,
+            name: session.user.name,
+            email: session.user.email,
             image: session.user.image,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
 
-        inputRef.current.value = ''
+        inputRef.current.value = "";
     };
 
     return (
@@ -41,7 +42,7 @@ function InputBox() {
                         type="text"
                         ref={inputRef}
                         placeholder={`What on you mind, ${session.user.name}?`}
-                />
+                    />
                 </form>
                 <button hidden type="submit" onClick={sendPost}>Submit</button>
             </div>
