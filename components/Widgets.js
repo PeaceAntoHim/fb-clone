@@ -1,9 +1,10 @@
 import { SearchIcon } from '@heroicons/react/outline';
+import Contact  from './Contact';
 import { DotsHorizontalIcon, VideoCameraIcon } from '@heroicons/react/outline';
 
 const contacts = [
     { src: "https://links.papareact.com/f0p", name: "Jeff Bezoz"},
-    { src: "https://links.papareact.com/kxx", name: "Elon Musk"},
+    { src: "https://links.papareact.com/kxk", name: "Elon Musk"},
     { src: "https://links.papareact.com/snf", name: "Mark Zuckerberg"},
     { src: "https://links.papareact.com/zvy", name: "Bill Gates"},
     { src: "https://links.papareact.com/d0c", name: "Harry Potter"},
@@ -22,8 +23,16 @@ function Widgets() {
                     <DotsHorizontalIcon className="h-6" />
                 </div>
             </div>
+
+            {contacts.map((contact) => (
+                <Contact 
+                    key={contact.src} 
+                    src={contact.src} 
+                    name={contact.name}
+                />
+            ))}
         </div>
-    )
+    );
 }
 
 export default Widgets;
