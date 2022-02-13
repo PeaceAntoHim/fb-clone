@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 ## Before you get started all around you have to create .env.local
+
 FACEBOOK_CLIENT_ID=YOUR_ID_CLIENT
 FACEBOOK_CLIENT_SECRET=YOUR_CLIENT_SECRET
 NEXTAUTH_URL=YOU_WEB_URL
