@@ -2,12 +2,12 @@ const stories = [
     {
         name: "Shonny Sangha",
         src: "https://links.papareact.com/zof",
-        profile: "https://links.papareact.com/14v",
+        profile: "https://links.papareact.com/l4v",
     },
     {
         name: "Elon Musk",
         src: "https://links.papareact.com/4zn",
-        profile: "https://links.papareact.com/kxx"
+        profile: "https://links.papareact.com/kxk"
     },
     {
         name: "Jeff Bezos",
@@ -22,7 +22,7 @@ const stories = [
     {
         name: "Bill Gates",
         src: "https://links.papareact.com/4u4",
-        profile: "https://links.papareact.com/zuy"
+        profile: "https://links.papareact.com/zvy"
     }
 ];
 import StoryCard from './StoryCard';
@@ -31,7 +31,7 @@ import StoryCard from './StoryCard';
 function Stories() {
     return (
         <div className="flex justify-center space-x-3 mx-auto">
-            {stories.map(story => (
+            {stories.map((story) => (
                 <StoryCard 
                     key={story.src}
                     name={story.name}
@@ -40,7 +40,7 @@ function Stories() {
                 />
             ))}
         </div>
-    )
+    );
 }
 
 export default Stories;
