@@ -36,7 +36,7 @@ function InputBox() {
                     height={40}
                     layout="fixed"
                 />
-                 <form className="flex flex-1">
+                <form className="flex flex-1">
                     <input
                         className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none" 
                         type="text"
