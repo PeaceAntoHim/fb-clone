@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { db } from '../firebase';
 import firebase from 'firebase';
@@ -7,9 +7,13 @@ import { EmojiHappyIcon } from '@heroicons/react/outline';
 import { CameraIcon, VideoCameraIcon } from '@heroicons/react/solid';
 
 function InputBox() {
+    /* This const to save all use in session and react hook */
     const [session] = useSession();
     const inputRef = useRef(null);
+    const filepickerRef = useRef(null);
+    const [imagePost, setImagePost] = useState(null);
 
+    /* This function for create data to firebase */
     const sendPost = (e) => {
         e.preventDefault();
 
@@ -25,6 +29,11 @@ function InputBox() {
 
         inputRef.current.value = "";
     };
+
+    /* This function for add image to post */
+    const addImageToPost = (e) => {
+
+    }
 
     return (
         <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
@@ -43,8 +52,8 @@ function InputBox() {
                         ref={inputRef}
                         placeholder={`What on you mind, ${session.user.name}?`}
                     />
-                </form>
                 <button hidden type="submit" onClick={sendPost}>Submit</button>
+                </form>
             </div>
 
             {/* This div for all icon in Input components */}
@@ -54,9 +63,18 @@ function InputBox() {
                     <p className="text-xs sm:text-sm xl:text-base">Live Video</p>
                 </div>
 
-                <div className="inputIcon">
+                <div 
+                    onClick={() => filepickerRef.current.click()}
+                    className="inputIcon"
+                >
                     <CameraIcon className="h-7 text-green-400" />
                     <p className="text-xs sm:text-sm xl:text-base">Photo/Video</p>
+                    <input 
+                        ref={filepickerRef} 
+                        onChange={addImageToPost} 
+                        type="text"
+                        hidden 
+                    />
                 </div>
 
                 <div className="inputIcon">
